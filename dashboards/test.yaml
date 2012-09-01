@@ -1,0 +1,12 @@
+title: Test yaml
+layout: 3x3.html
+widgets:
+  cell1x1:
+    type: bar
+    datasource: /static/test-data/fruits
+  cell1x2:
+    type: bar
+    datasource: /static/test-data/fruits1
+  cell3x2:
+    type: line
+    datasource: /static/test-data/fruits1

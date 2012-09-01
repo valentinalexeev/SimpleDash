@@ -1,0 +1,12 @@
+{% macro line(id, datasource) %}
+<div id="line-{{id}}" style="height:100%; width: 100%;"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+	chartInit({
+		datasource: "{{ datasource }}",
+		type: "line",
+		renderTo: "line-{{id}}"
+	});
+});
+</script>
+{% endmacro %}

@@ -1,0 +1,7 @@
+{% extends "3x3.html" %}
+{% import "bar.html" as bar %}
+{% import "line.html" as line %}
+{% block title%}Test dashboard{% endblock %}
+
+{% block cell1x1 %}{{ bar.bar('cell1x1', '/static/test-data/fruits') }}{% endblock %}
+{% block cell1x2 %}{{ line.line('cell1x2', '/static/test-data/fruits1') }}{% endblock %}

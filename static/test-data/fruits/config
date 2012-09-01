@@ -1,0 +1,8 @@
+{
+    "config": {
+        "chart": { "type": "bar" },
+        "title": { "text": "Fruit consumption" },
+        "xAxis": { "categories": ["Apples", "Bananas", "Oranges"]},
+        "yAxis": { "title": {"text": "Fruit eaten"}}
+    }
+}

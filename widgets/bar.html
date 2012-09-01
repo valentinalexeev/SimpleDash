@@ -1,0 +1,12 @@
+{% macro bar(id, datasource) %}
+<div id="bar-{{id}}" style="height:100%; width: 100%;"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+	chartInit({
+		datasource: "{{ datasource }}",
+		type: "bar",
+		renderTo: "bar-{{id}}"
+	});
+});
+</script>
+{% endmacro %}

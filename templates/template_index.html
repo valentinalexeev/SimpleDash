@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>SimpleDash: Main</title>
+    </head>
+    <body>
+        <h1>List of available dashboards</h1>
+        <ul>
+        {% for dashboard in dashboards %}
+            <li><a href="/render?dashboard={{ dashboard.id }}">{{ dashboard.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </body>
+</html>
