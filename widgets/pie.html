@@ -1,0 +1,12 @@
+{% macro pie(id, datasource) %}
+<div id="pie-{{id}}" style="height:100%; width: 100%;"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+	chartInit({
+		datasource: "{{ datasource }}",
+		type: "pie",
+		renderTo: "pie-{{id}}"
+	});
+});
+</script>
+{% endmacro %}

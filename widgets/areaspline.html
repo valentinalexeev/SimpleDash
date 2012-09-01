@@ -1,0 +1,12 @@
+{% macro areaspline(id, datasource) %}
+<div id="areaspline-{{id}}" style="height:100%; width: 100%;"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+	chartInit({
+		datasource: "{{ datasource }}",
+		type: "areaspline",
+		renderTo: "areaspline-{{id}}"
+	});
+});
+</script>
+{% endmacro %}

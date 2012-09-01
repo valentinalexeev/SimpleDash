@@ -1,0 +1,12 @@
+{% macro column(id, datasource) %}
+<div id="column-{{id}}" style="height:100%; width: 100%;"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+	chartInit({
+		datasource: "{{ datasource }}",
+		type: "column",
+		renderTo: "column-{{id}}"
+	});
+});
+</script>
+{% endmacro %}

@@ -1,0 +1,12 @@
+{% macro scatter(id, datasource) %}
+<div id="scatter-{{id}}" style="height:100%; width: 100%;"></div>
+<script language="JavaScript">
+$(document).ready(function() {
+	chartInit({
+		datasource: "{{ datasource }}",
+		type: "scatter",
+		renderTo: "scatter-{{id}}"
+	});
+});
+</script>
+{% endmacro %}
