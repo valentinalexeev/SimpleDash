@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block layout %}
+<table border="0" height="100%" width="100%">
+    <tr>
+        <td rowspan="3" width="50%">{% block big%}{% endblock %}</td>
+        <td>{% block small1 %}{% endblock %}</td>
+    </tr>
+    <tr>
+        <td>{% block small2 %}{% endblock %}</td>
+    </tr>
+    <tr>
+        <td>{% block small3 %}{% endblock %}</td>
+    </tr>
+</table>
+{% endblock %}
