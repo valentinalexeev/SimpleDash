@@ -18,32 +18,31 @@ datasource:
 widgets:
   cell1x1:
     type: column
-    config:
-        plotOptions:
-            column:
-                stacking: normal
-        title:
-             text: Fruit consumption
-        xAxis:
-             categories:
-                - Apples
-                - Bananas
-                - Oranges
-        yAxis:
-             title:
-                text: Fruit eaten
+    title: Fruit consumption
+    &xAxis xAxis:
+        categories:
+            - Apples
+            - Bananas
+            - Oranges
+    &yAxis yAxis:
+         title:
+            text: Fruit eaten
     data:
         - static: {"name": "Jane", "data": [1, 0, 4], "stack": 1}
         - static: {"name": "John", "data": [5, 7, 3], "stack": 1}
-        - static: {"name": "minimum", "data": [2, 2, 2], "stack": 0}
-        - db:
+        - static: {"name": "minimum", "data": [2, 2, 2], "stack": 4}
+        - sqlite:
             source: local
             request: SELECT name, sum(quantity), 0 as stack FROM fruitconsumption GROUP BY fruit
-        - db:
-            source: csv
   cell1x2:
     type: column
+    title: Fruit consumption
     datasource: /static/test-data/fruits1
+    xAxis: *xAxis
+    yAxis: *yAxis
   cell3x2:
     type: line
+    title: Fruit consumption
     datasource: /static/test-data/fruits1
+    xAxis: *xAxis
+    yAxis: *yAxis
