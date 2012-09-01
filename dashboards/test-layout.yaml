@@ -1,0 +1,20 @@
+title: 1 big 3 small
+layout: 1big3small.html
+widgets:
+    big:
+        type: column
+        datasource: /static/test-data/fruits
+        config:
+            title:
+                text: A big chart
+            xAxis:
+                categories:
+                    - Apples
+                    - Bananas
+                    - Oranges
+            yAxis:
+                title:
+                    text: Fruit consumption
+    small1:
+        type: pie
+        datasource: /static/test-data/fruits
