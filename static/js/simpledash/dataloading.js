@@ -1,3 +1,5 @@
+var charts = [];
+
 function chartInit(config) {
     $.ajax({
         url: config.datasource + "/config",
@@ -9,6 +11,8 @@ function chartInit(config) {
         alert (textStatus);
         alert (errorThrown);
     });
+    
+    charts.push(config);
 }
 
 function chartConfigLoaded(config, data) {
@@ -17,6 +21,7 @@ function chartConfigLoaded(config, data) {
         renderTo: config.renderTo
     };
     data.config.credits = {"enabled": false };
+
     config.chart = new Highcharts.Chart(data.config);
     $.ajax({
         url: config.datasource + "/data",
