@@ -1,8 +1,10 @@
 { "data":[{
             "name": "Test",
-            "data": [1, 0, 4]
+            "data": [1, 0, 4],
+            "stack": 0
          }, {
             "name": "Another test",
-            "data": [5, 7, 3]
+            "data": [5, 7, 3],
+            "stack": 0
          }]
 }
