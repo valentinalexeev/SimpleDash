@@ -1,11 +1,48 @@
 title: Test yaml
 layout: 3x3.html
+datasource:
+    local:
+        type: sqlite
+        database: test.sqlite
+    db:
+        type: mysql
+        database: bizdev
+        host: localhost
+        port: 3306
+        user: test
+        password: test1test
+    csv:
+        type: csv
+        database: test.csv
+        dialect: excel
 widgets:
   cell1x1:
-    type: bar
-    datasource: /static/test-data/fruits
+    type: column
+    config:
+        plotOptions:
+            column:
+                stacking: normal
+        title:
+             text: Fruit consumption
+        xAxis:
+             categories:
+                - Apples
+                - Bananas
+                - Oranges
+        yAxis:
+             title:
+                text: Fruit eaten
+    data:
+        - static: {"name": "Jane", "data": [1, 0, 4], "stack": 1}
+        - static: {"name": "John", "data": [5, 7, 3], "stack": 1}
+        - static: {"name": "minimum", "data": [2, 2, 2], "stack": 0}
+        - db:
+            source: local
+            request: SELECT name, sum(quantity), 0 as stack FROM fruitconsumption GROUP BY fruit
+        - db:
+            source: csv
   cell1x2:
-    type: bar
+    type: column
     datasource: /static/test-data/fruits1
   cell3x2:
     type: line
