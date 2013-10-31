@@ -9,7 +9,7 @@
             <li><a href="/render?dashboard={{ dashboard }}">{{ dashboard }}</a></li>
         {% endfor %}
         {% for dashboard in dashboards_yaml %}
-            <li><a href="/renderYaml?dashboard={{ dashboard }}">{{ dashboard }}</a></li>
+            <li><a href="/renderYaml/{{ dashboard }}">{{ dashboard }}</a></li>
         {% endfor %}
         </ul>
     </body>

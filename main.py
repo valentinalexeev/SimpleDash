@@ -29,9 +29,7 @@ class RenderHandler(webapp2.RequestHandler):
         self.response.write(template.render())
 
 class RenderYamlHandler(webapp2.RequestHandler):
-	def get(self):
-		dashboard_name = cgi.escape(self.request.params['dashboard'])
-		
+	def get(self, dashboard_name):
 		t = Dashboard.from_yaml(dashboard_name).generate_template()
 
 		template = env.from_string(t)
@@ -53,7 +51,7 @@ class DataHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/render', RenderHandler),
-    ('/renderYaml', RenderYamlHandler),
+    ('/renderYaml/(\w+)', RenderYamlHandler),
     ('/data/(\w+)/(\w+)/(\w+)', DataHandler)
 ], debug=True)
 
