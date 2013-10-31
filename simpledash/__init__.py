@@ -16,8 +16,7 @@ class Dashboard:
         dashboard = Dashboard()
         dashboard.title = config['title']
         dashboard.layout = config['layout']
-    
-        print config    
+
         if 'datasource' in config:
             DatasourceFactory.set_config(config['datasource'])
         
